@@ -1,0 +1,16 @@
+1 |Emergency|Department|
+2 |Cardiology|Department|
+3 |Pediatrics|Department|
+4 |Surgery|Department|
+5 |Pharmacy|Department|
+6 |Ward A|Ward|
+7 |Ward B|Ward|
+8 |ICU|Ward|
+EDGES:
+1 2 5
+1 4 3
+2 6 2
+3 7 3
+4 8 4
+5 6 6
+5 7 6

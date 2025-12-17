@@ -1,11 +1,8 @@
 #ifndef APPOINTMENT_H
 #define APPOINTMENT_H
-
 #include <string>
 #include <fstream>
 #include <queue>
-
-// Appointment structure
 struct Appointment {
     int appointmentID;
     int patientID;

@@ -1,0 +1,5 @@
+1 18 |Hamza Ijaz|M|ijazhamza2005@gmail.com|03299583089|O+|None|
+2 19 |Farhan|M|farhan200@gmail.com|03292930293|B+|None|
+3 19 |Hamza Samee|M|hamzasamee@gamil.com|034893743920|O+|None|
+4 19 |Haad|M|haaad.majeed2|03067895072|B+|None|
+5 19 |Daniyal|F|daniyal24|03028383489|AB+|NONE|

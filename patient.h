@@ -4,7 +4,6 @@
 #include <string>
 #include <fstream>
 
-// Patient structure
 struct Patient {
     int patientID;
     std::string name;
@@ -15,21 +14,19 @@ struct Patient {
     std::string bloodGroup;
     std::string medicalHistory;
     
-    // BST pointers
     Patient* left;
     Patient* right;
     
-    // Constructor
+
     Patient(int id, std::string n, int a, std::string g, std::string addr, 
             std::string ph, std::string bg, std::string mh);
 };
 
-// Patient Management Class using BST
 class PatientManager {
 private:
     Patient* root;
     
-    // Helper functions
+
     Patient* insertBST(Patient* node, Patient* newPatient);
     Patient* searchBST(Patient* node, int id);
     Patient* deleteBST(Patient* node, int id);
@@ -41,19 +38,16 @@ private:
 public:
     PatientManager();
     ~PatientManager();
-    
-    // Main functions
+ 
     void registerPatient();
     void viewPatient(int id);
     void viewAllPatients();
     void updatePatient(int id);
     void deletePatient(int id);
-    
-    // File operations
+
     void loadFromFile();
     void saveToFile();
-    
-    // Check if patient exists
+
     bool patientExists(int id);
 };
 

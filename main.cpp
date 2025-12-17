@@ -28,47 +28,70 @@ void showBillingMenu();
 void showGraphMenu();
 void showAdminMenu();
 
-int main() {
+int main()
+{
     clearScreen();
     cout << "========================================" << endl;
     cout << "  HOSPITAL MANAGEMENT SYSTEM (HMS)" << endl;
     cout << "  DSA-Based Modular System" << endl;
-    cout << "========================================" << endl << endl;
+    cout << "========================================" << endl
+         << endl;
     cout << "System loaded successfully!" << endl;
     pause();
 
     int choice;
-    do {
+    do
+    {
         showMainMenu();
         choice = getValidInt("Enter your choice: ");
-        switch(choice) {
-            case 1: showPatientMenu(); break;
-            case 2: showDoctorMenu(); break;
-            case 3: showAppointmentMenu(); break;
-            case 4: showBedMenu(); break;
-            case 5: showPharmacyMenu(); break;
-            case 6: showBillingMenu(); break;
-            case 7: showGraphMenu(); break;
-            case 8: showAdminMenu(); break;
-            case 9:
-                clearScreen();
-                cout << "Thank you for using HMS!" << endl;
-                cout << "All data has been saved." << endl;
-                cout << "Goodbye!" << endl << endl;
-                break;
-            default:
-                cout << "Invalid choice! Please try again." << endl;
-                pause();
+        switch (choice)
+        {
+        case 1:
+            showPatientMenu();
+            break;
+        case 2:
+            showDoctorMenu();
+            break;
+        case 3:
+            showAppointmentMenu();
+            break;
+        case 4:
+            showBedMenu();
+            break;
+        case 5:
+            showPharmacyMenu();
+            break;
+        case 6:
+            showBillingMenu();
+            break;
+        case 7:
+            showGraphMenu();
+            break;
+        case 8:
+            showAdminMenu();
+            break;
+        case 9:
+            clearScreen();
+            cout << "Thank you for using HMS!" << endl;
+            cout << "All data has been saved." << endl;
+            cout << "Goodbye!" << endl
+                 << endl;
+            break;
+        default:
+            cout << "Invalid choice! Please try again." << endl;
+            pause();
         }
-    } while(choice != 9);
+    } while (choice != 9);
     return 0;
 }
 
-void showMainMenu() {
+void showMainMenu()
+{
     clearScreen();
     cout << "========================================" << endl;
     cout << "         MAIN MENU" << endl;
-    cout << "========================================" << endl << endl;
+    cout << "========================================" << endl
+         << endl;
     cout << "1. Patient Management" << endl;
     cout << "2. Doctor Management" << endl;
     cout << "3. Appointment Management" << endl;
@@ -81,13 +104,16 @@ void showMainMenu() {
     cout << "========================================" << endl;
 }
 
-void showPatientMenu() {
+void showPatientMenu()
+{
     int choice;
-    do {
+    do
+    {
         clearScreen();
         cout << "========================================" << endl;
         cout << "      PATIENT MANAGEMENT" << endl;
-        cout << "========================================" << endl << endl;
+        cout << "========================================" << endl
+             << endl;
         cout << "1. Register New Patient" << endl;
         cout << "2. View Patient Details" << endl;
         cout << "3. View All Patients" << endl;
@@ -96,36 +122,47 @@ void showPatientMenu() {
         cout << "6. Back to Main Menu" << endl;
         cout << "========================================" << endl;
         choice = getValidInt("Enter your choice: ");
-        switch(choice) {
-            case 1: patientMgr.registerPatient(); break;
-            case 2: {
-                int id = getValidInt("Enter Patient ID: ");
-                patientMgr.viewPatient(id);
-                pause();
-                break;
-            }
-            case 3: patientMgr.viewAllPatients(); break;
-            case 4: {
-                int id = getValidInt("Enter Patient ID: ");
-                patientMgr.updatePatient(id);
-                break;
-            }
-            case 5: {
-                int id = getValidInt("Enter Patient ID: ");
-                patientMgr.deletePatient(id);
-                break;
-            }
+        switch (choice)
+        {
+        case 1:
+            patientMgr.registerPatient();
+            break;
+        case 2:
+        {
+            int id = getValidInt("Enter Patient ID: ");
+            patientMgr.viewPatient(id);
+            pause();
+            break;
         }
-    } while(choice != 6);
+        case 3:
+            patientMgr.viewAllPatients();
+            break;
+        case 4:
+        {
+            int id = getValidInt("Enter Patient ID: ");
+            patientMgr.updatePatient(id);
+            break;
+        }
+        case 5:
+        {
+            int id = getValidInt("Enter Patient ID: ");
+            patientMgr.deletePatient(id);
+            break;
+        }
+        }
+    } while (choice != 6);
 }
 
-void showDoctorMenu() {
+void showDoctorMenu()
+{
     int choice;
-    do {
+    do
+    {
         clearScreen();
         cout << "========================================" << endl;
         cout << "      DOCTOR MANAGEMENT" << endl;
-        cout << "========================================" << endl << endl;
+        cout << "========================================" << endl
+             << endl;
         cout << "1. Register New Doctor" << endl;
         cout << "2. View Doctor Details" << endl;
         cout << "3. View All Doctors" << endl;
@@ -135,44 +172,56 @@ void showDoctorMenu() {
         cout << "7. Back to Main Menu" << endl;
         cout << "========================================" << endl;
         choice = getValidInt("Enter your choice: ");
-        switch(choice) {
-            case 1: doctorMgr.registerDoctor(); break;
-            case 2: {
-                int id = getValidInt("Enter Doctor ID: ");
-                doctorMgr.viewDoctor(id);
-                pause();
-                break;
-            }
-            case 3: doctorMgr.viewAllDoctors(); break;
-            case 4: {
-                int id = getValidInt("Enter Doctor ID: ");
-                doctorMgr.updateInfo(id);
-                break;
-            }
-            case 5: {
-                int doctorID = getValidInt("Enter Doctor ID: ");
-                int patientID = getValidInt("Enter Patient ID: ");
-                doctorMgr.assignPatient(doctorID, patientID);
-                pause();
-                break;
-            }
-            case 6: {
-                int id = getValidInt("Enter Doctor ID: ");
-                doctorMgr.viewAssignedPatients(id);
-                pause();
-                break;
-            }
+        switch (choice)
+        {
+        case 1:
+            doctorMgr.registerDoctor();
+            break;
+        case 2:
+        {
+            int id = getValidInt("Enter Doctor ID: ");
+            doctorMgr.viewDoctor(id);
+            pause();
+            break;
         }
-    } while(choice != 7);
+        case 3:
+            doctorMgr.viewAllDoctors();
+            break;
+        case 4:
+        {
+            int id = getValidInt("Enter Doctor ID: ");
+            doctorMgr.updateInfo(id);
+            break;
+        }
+        case 5:
+        {
+            int doctorID = getValidInt("Enter Doctor ID: ");
+            int patientID = getValidInt("Enter Patient ID: ");
+            doctorMgr.assignPatient(doctorID, patientID);
+            pause();
+            break;
+        }
+        case 6:
+        {
+            int id = getValidInt("Enter Doctor ID: ");
+            doctorMgr.viewAssignedPatients(id);
+            pause();
+            break;
+        }
+        }
+    } while (choice != 7);
 }
 
-void showAppointmentMenu() {
+void showAppointmentMenu()
+{
     int choice;
-    do {
+    do
+    {
         clearScreen();
         cout << "========================================" << endl;
         cout << "    APPOINTMENT MANAGEMENT" << endl;
-        cout << "========================================" << endl << endl;
+        cout << "========================================" << endl
+             << endl;
         cout << "1. Book Appointment" << endl;
         cout << "2. View Appointment" << endl;
         cout << "3. View All Appointments" << endl;
@@ -182,43 +231,54 @@ void showAppointmentMenu() {
         cout << "7. Back to Main Menu" << endl;
         cout << "========================================" << endl;
         choice = getValidInt("Enter your choice: ");
-        switch(choice) {
-            case 1: appointmentMgr.bookAppointment(); break;
-            case 2: {
-                int id = getValidInt("Enter Appointment ID: ");
-                appointmentMgr.viewAppointmentByID(id);
-                pause();
-                break;
-            }
-            case 3: appointmentMgr.viewAllAppointments(); break;
-            case 4: {
-                int id = getValidInt("Enter Doctor ID: ");
-                appointmentMgr.viewAppointments(id);
-                pause();
-                break;
-            }
-            case 5: {
-                int id = getValidInt("Enter Appointment ID: ");
-                appointmentMgr.rescheduleAppointment(id);
-                break;
-            }
-            case 6: {
-                int id = getValidInt("Enter Appointment ID: ");
-                appointmentMgr.cancelAppointment(id);
-                break;
-            }
+        switch (choice)
+        {
+        case 1:
+            appointmentMgr.bookAppointment();
+            break;
+        case 2:
+        {
+            int id = getValidInt("Enter Appointment ID: ");
+            appointmentMgr.viewAppointmentByID(id);
+            pause();
+            break;
         }
-    } while(choice != 7);
+        case 3:
+            appointmentMgr.viewAllAppointments();
+            break;
+        case 4:
+        {
+            int id = getValidInt("Enter Doctor ID: ");
+            appointmentMgr.viewAppointments(id);
+            pause();
+            break;
+        }
+        case 5:
+        {
+            int id = getValidInt("Enter Appointment ID: ");
+            appointmentMgr.rescheduleAppointment(id);
+            break;
+        }
+        case 6:
+        {
+            int id = getValidInt("Enter Appointment ID: ");
+            appointmentMgr.cancelAppointment(id);
+            break;
+        }
+        }
+    } while (choice != 7);
 }
 
-// Bed Menu
-void showBedMenu() {
+void showBedMenu()
+{
     int choice;
-    do {
+    do
+    {
         clearScreen();
         cout << "========================================" << endl;
         cout << "      BED & WARD MANAGEMENT" << endl;
-        cout << "========================================" << endl << endl;
+        cout << "========================================" << endl
+             << endl;
         cout << "1. Add New Bed" << endl;
         cout << "2. Allocate Bed to Patient" << endl;
         cout << "3. Free Bed" << endl;
@@ -228,29 +288,45 @@ void showBedMenu() {
         cout << "7. Back to Main Menu" << endl;
         cout << "========================================" << endl;
         choice = getValidInt("Enter your choice: ");
-        switch(choice) {
-            case 1: bedMgr.addBed(); break;
-            case 2: bedMgr.allocateBed(); break;
-            case 3: {
-                int id = getValidInt("Enter Bed ID: ");
-                bedMgr.freeBed(id);
-                break;
-            }
-            case 4: bedMgr.viewBeds(); break;
-            case 5: clearScreen(); bedMgr.viewAvailableBeds(); pause(); break;
-            case 6: bedMgr.viewOccupiedBeds(); break;
+        switch (choice)
+        {
+        case 1:
+            bedMgr.addBed();
+            break;
+        case 2:
+            bedMgr.allocateBed();
+            break;
+        case 3:
+        {
+            int id = getValidInt("Enter Bed ID: ");
+            bedMgr.freeBed(id);
+            break;
         }
-    } while(choice != 7);
+        case 4:
+            bedMgr.viewBeds();
+            break;
+        case 5:
+            clearScreen();
+            bedMgr.viewAvailableBeds();
+            pause();
+            break;
+        case 6:
+            bedMgr.viewOccupiedBeds();
+            break;
+        }
+    } while (choice != 7);
 }
 
-// Pharmacy Menu
-void showPharmacyMenu() {
+void showPharmacyMenu()
+{
     int choice;
-    do {
+    do
+    {
         clearScreen();
         cout << "========================================" << endl;
         cout << "      PHARMACY MANAGEMENT" << endl;
-        cout << "========================================" << endl << endl;
+        cout << "========================================" << endl
+             << endl;
         cout << "1. Add Medicine" << endl;
         cout << "2. View Medicine" << endl;
         cout << "3. View All Inventory" << endl;
@@ -260,45 +336,56 @@ void showPharmacyMenu() {
         cout << "7. Back to Main Menu" << endl;
         cout << "========================================" << endl;
         choice = getValidInt("Enter your choice: ");
-        switch(choice) {
-            case 1: pharmacyMgr.addMedicine(); break;
-            case 2: {
-                int id = getValidInt("Enter Medicine ID: ");
-                pharmacyMgr.viewMedicine(id);
-                pause();
-                break;
-            }
-            case 3: pharmacyMgr.viewInventory(); break;
-            case 4: {
-                int id = getValidInt("Enter Medicine ID: ");
-                int qty = getValidInt("Enter quantity to add (negative to subtract): ");
-                pharmacyMgr.updateStock(id, qty);
-                pause();
-                break;
-            }
-            case 5: {
-                int id = getValidInt("Enter Medicine ID: ");
-                pharmacyMgr.removeMedicine(id);
-                break;
-            }
-            case 6: {
-                string name = getValidString("Enter Medicine Name: ");
-                pharmacyMgr.searchMedicineByName(name);
-                pause();
-                break;
-            }
+        switch (choice)
+        {
+        case 1:
+            pharmacyMgr.addMedicine();
+            break;
+        case 2:
+        {
+            int id = getValidInt("Enter Medicine ID: ");
+            pharmacyMgr.viewMedicine(id);
+            pause();
+            break;
         }
-    } while(choice != 7);
+        case 3:
+            pharmacyMgr.viewInventory();
+            break;
+        case 4:
+        {
+            int id = getValidInt("Enter Medicine ID: ");
+            int qty = getValidInt("Enter quantity to add (negative to subtract): ");
+            pharmacyMgr.updateStock(id, qty);
+            pause();
+            break;
+        }
+        case 5:
+        {
+            int id = getValidInt("Enter Medicine ID: ");
+            pharmacyMgr.removeMedicine(id);
+            break;
+        }
+        case 6:
+        {
+            string name = getValidString("Enter Medicine Name: ");
+            pharmacyMgr.searchMedicineByName(name);
+            pause();
+            break;
+        }
+        }
+    } while (choice != 7);
 }
 
-// Billing Menu
-void showBillingMenu() {
+void showBillingMenu()
+{
     int choice;
-    do {
+    do
+    {
         clearScreen();
         cout << "========================================" << endl;
         cout << "      BILLING MANAGEMENT" << endl;
-        cout << "========================================" << endl << endl;
+        cout << "========================================" << endl
+             << endl;
         cout << "1. Generate Bill" << endl;
         cout << "2. View Bill" << endl;
         cout << "3. View All Bills" << endl;
@@ -308,37 +395,49 @@ void showBillingMenu() {
         cout << "7. Back to Main Menu" << endl;
         cout << "========================================" << endl;
         choice = getValidInt("Enter your choice: ");
-        switch(choice) {
-            case 1: billingMgr.generateBill(); break;
-            case 2: {
-                int id = getValidInt("Enter Bill ID: ");
-                billingMgr.viewBill(id);
-                break;
-            }
-            case 3: billingMgr.viewAllBills(); break;
-            case 4: {
-                int id = getValidInt("Enter Bill ID: ");
-                billingMgr.updateBill(id);
-                break;
-            }
-            case 5: {
-                int id = getValidInt("Enter Bill ID: ");
-                billingMgr.markBillPaid(id);
-                break;
-            }
-            case 6: billingMgr.sortBillsByAmount(); break;
+        switch (choice)
+        {
+        case 1:
+            billingMgr.generateBill();
+            break;
+        case 2:
+        {
+            int id = getValidInt("Enter Bill ID: ");
+            billingMgr.viewBill(id);
+            break;
         }
-    } while(choice != 7);
+        case 3:
+            billingMgr.viewAllBills();
+            break;
+        case 4:
+        {
+            int id = getValidInt("Enter Bill ID: ");
+            billingMgr.updateBill(id);
+            break;
+        }
+        case 5:
+        {
+            int id = getValidInt("Enter Bill ID: ");
+            billingMgr.markBillPaid(id);
+            break;
+        }
+        case 6:
+            billingMgr.sortBillsByAmount();
+            break;
+        }
+    } while (choice != 7);
 }
 
-// Graph Menu
-void showGraphMenu() {
+void showGraphMenu()
+{
     int choice;
-    do {
+    do
+    {
         clearScreen();
         cout << "========================================" << endl;
         cout << "    HOSPITAL GRAPH (DEPARTMENTS)" << endl;
-        cout << "========================================" << endl << endl;
+        cout << "========================================" << endl
+             << endl;
         cout << "1. View Graph" << endl;
         cout << "2. Add Node (Department/Location)" << endl;
         cout << "3. Add Edge (Connection)" << endl;
@@ -349,80 +448,95 @@ void showGraphMenu() {
         cout << "8. Back to Main Menu" << endl;
         cout << "========================================" << endl;
         choice = getValidInt("Enter your choice: ");
-        switch(choice) {
-            case 1: hospitalGraph.viewGraph(); break;
-            case 2: {
-                string name = getValidString("Enter Node Name: ");
-                string type = getValidString("Enter Type (Department/Ward/etc): ");
-                hospitalGraph.addNode(name, type);
-                pause();
-                break;
-            }
-            case 3: {
-                int fromID = getValidInt("Enter From Node ID: ");
-                int toID = getValidInt("Enter To Node ID: ");
-                int distance = getValidInt("Enter Distance: ");
-                hospitalGraph.addEdge(fromID, toID, distance);
-                pause();
-                break;
-            }
-            case 4: {
-                int id = getValidInt("Enter Node ID: ");
-                hospitalGraph.viewNode(id);
-                pause();
-                break;
-            }
-            case 5: {
-                int id = getValidInt("Enter Node ID: ");
-                hospitalGraph.viewConnections(id);
-                pause();
-                break;
-            }
-            case 6: {
-                int fromID = getValidInt("Enter From Node ID: ");
-                int toID = getValidInt("Enter To Node ID: ");
-                hospitalGraph.shortestPath(fromID, toID);
-                pause();
-                break;
-            }
-            case 7: hospitalGraph.departmentConnections(); break;
+        switch (choice)
+        {
+        case 1:
+            hospitalGraph.viewGraph();
+            break;
+        case 2:
+        {
+            string name = getValidString("Enter Node Name: ");
+            string type = getValidString("Enter Type (Department/Ward/etc): ");
+            hospitalGraph.addNode(name, type);
+            pause();
+            break;
         }
-    } while(choice != 8);
+        case 3:
+        {
+            int fromID = getValidInt("Enter From Node ID: ");
+            int toID = getValidInt("Enter To Node ID: ");
+            int distance = getValidInt("Enter Distance: ");
+            hospitalGraph.addEdge(fromID, toID, distance);
+            pause();
+            break;
+        }
+        case 4:
+        {
+            int id = getValidInt("Enter Node ID: ");
+            hospitalGraph.viewNode(id);
+            pause();
+            break;
+        }
+        case 5:
+        {
+            int id = getValidInt("Enter Node ID: ");
+            hospitalGraph.viewConnections(id);
+            pause();
+            break;
+        }
+        case 6:
+        {
+            int fromID = getValidInt("Enter From Node ID: ");
+            int toID = getValidInt("Enter To Node ID: ");
+            hospitalGraph.shortestPath(fromID, toID);
+            pause();
+            break;
+        }
+        case 7:
+            hospitalGraph.departmentConnections();
+            break;
+        }
+    } while (choice != 8);
 }
 
-// Admin Menu
-void showAdminMenu() {
+void showAdminMenu()
+{
     int choice;
-    do {
+    do
+    {
         clearScreen();
         cout << "========================================" << endl;
         cout << "         ADMIN PANEL" << endl;
-        cout << "========================================" << endl << endl;
+        cout << "========================================" << endl
+             << endl;
         cout << "1. View System Statistics" << endl;
         cout << "2. View All Data Summary" << endl;
         cout << "3. Back to Main Menu" << endl;
         cout << "========================================" << endl;
         choice = getValidInt("Enter your choice: ");
-        switch(choice) {
-            case 1: {
-                clearScreen();
-                cout << "========== SYSTEM STATISTICS ==========" << endl << endl;
-                cout << "Note: Detailed statistics can be viewed" << endl;
-                cout << "in individual modules." << endl;
-                cout << "=====================================" << endl;
-                pause();
-                break;
-            }
-            case 2: {
-                clearScreen();
-                cout << "========== DATA SUMMARY ==========" << endl << endl;
-                cout << "Use individual modules to view detailed data." << endl;
-                cout << "=====================================" << endl;
-                pause();
-                break;
-            }
+        switch (choice)
+        {
+        case 1:
+        {
+            clearScreen();
+            cout << "========== SYSTEM STATISTICS ==========" << endl
+                 << endl;
+            cout << "Note: Detailed statistics can be viewed" << endl;
+            cout << "in individual modules." << endl;
+            cout << "=====================================" << endl;
+            pause();
+            break;
         }
-    } while(choice != 3);
+        case 2:
+        {
+            clearScreen();
+            cout << "========== DATA SUMMARY ==========" << endl
+                 << endl;
+            cout << "Use individual modules to view detailed data." << endl;
+            cout << "=====================================" << endl;
+            pause();
+            break;
+        }
+        }
+    } while (choice != 3);
 }
-
-
