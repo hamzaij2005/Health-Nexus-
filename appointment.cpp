@@ -67,7 +67,7 @@ void AppointmentManager::clearQueue(int doctorID) {
     }
 }
 
-// Find appointment by ID
+
 Appointment* AppointmentManager::findAppointment(int appointmentID) {
     for (int i = 0; i < MAX_DOCTORS; i++) {
         if (doctorQueues[i] != nullptr) {
@@ -82,7 +82,6 @@ Appointment* AppointmentManager::findAppointment(int appointmentID) {
     return nullptr;
 }
 
-// Book new appointment
 void AppointmentManager::bookAppointment() {
     clearScreen();
     cout << "========== BOOK APPOINTMENT ==========" << endl << endl;
@@ -103,7 +102,6 @@ void AppointmentManager::bookAppointment() {
     saveToFile();
     pause();
 }
-// Reschedule appointment
 void AppointmentManager::rescheduleAppointment(int appointmentID) {
     Appointment* appointment = findAppointment(appointmentID);
     if (appointment == nullptr) {
@@ -126,8 +124,6 @@ void AppointmentManager::rescheduleAppointment(int appointmentID) {
     saveToFile();
     pause();
 }
-
-// Cancel appointment
 void AppointmentManager::cancelAppointment(int appointmentID) {
     Appointment* appointment = findAppointment(appointmentID);
     if (appointment == nullptr) {
@@ -142,7 +138,6 @@ void AppointmentManager::cancelAppointment(int appointmentID) {
     pause();
 }
 
-// View appointments for a doctor
 void AppointmentManager::viewAppointments(int doctorID) {
     if (doctorQueues[doctorID] == nullptr) {
         cout << endl << "No appointments found." << endl;
@@ -161,7 +156,6 @@ void AppointmentManager::viewAppointments(int doctorID) {
     }
 }
 
-// View appointment by ID
 void AppointmentManager::viewAppointmentByID(int appointmentID) {
     Appointment* appointment = findAppointment(appointmentID);
     if (appointment != nullptr) {
@@ -177,7 +171,6 @@ void AppointmentManager::viewAppointmentByID(int appointmentID) {
     }
 }
 
-// Load appointments from file
 void AppointmentManager::loadFromFile() {
     ifstream file("appointments.txt");
     if (!file)
