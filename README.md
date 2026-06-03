@@ -59,51 +59,6 @@ It simulates real-world hospital workflows using efficient **Data Structures and
 
 ---
 
-## 📁 Project Structure
-
-
-Health-Nexus/
-│
-├── main.cpp
-├── PatientModule.cpp
-├── WardModule.cpp
-├── AppointmentModule.cpp
-├── PharmacyModule.cpp
-├── BillingModule.cpp
-│
-└── data/
-├── patients.txt
-├── beds.txt
-├── appointments.txt
-└── pharmacy.txt
-
-
----
-
-## ⚙️ How to Run
-
-### Using g++
-```bash
-g++ main.cpp -o health_nexus
-./health_nexus
-Using IDE
-Open project in CodeBlocks or Visual Studio
-Build and run main.cpp
-🎯 Project Objective
-
-The goal of Health-Nexus is to simulate a real hospital management system while strengthening:
-
-Problem-solving skills
-Data Structures & Algorithms implementation
-System design thinking
-File-based data persistence in C++
-👨‍💻 Author
-
-Hamza Ijaz
-BS Software Engineering Student (GIKI)
-GitHub: https://github.com/your-username
-LinkedIn: https://linkedin.com/in/your-profile
-
 ⭐ Support
 
 If you like this project, give it a ⭐ on GitHub and feel free to fork it for learning purposes!
